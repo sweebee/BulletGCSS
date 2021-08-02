@@ -222,11 +222,9 @@ void connectToTheInternet() {
 
     String result;
     #ifdef TINY_GSM_MODEM_SIM7600
-      do {
-          // 2 = Automatic, 13 = GSM Only, 38 = LTE Only, 61 = GSM+TDSCDMA+LTE
-          result = modem.setNetworkMode(38);
-          delay(500);
-      } while (result != "OK");
+      delay(2000);
+      result = modem.setNetworkMode(38);
+      delay(2000);
   
       String modemName = modem.getModemName();
       SerialMon.print("Modem Name: ");
